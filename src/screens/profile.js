@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import Header from "../components/header";
+import Header from "../components/Header";
 import s from "../../styles/mainStyle";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useState } from "react";

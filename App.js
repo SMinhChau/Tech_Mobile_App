@@ -15,21 +15,21 @@ import Icon from "@expo/vector-icons/Ionicons";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import Home from "./src/screens/home.js";
+import Home from "./src/screens/Home.js";
 import Search from "./src/screens/Search.js";
 import Menus from "./src/screens/Menu.js";
-import Basket from "./src/screens/basket";
-import AccountStacks from "./src/stacks/accountArena.js";
+import Basket from "./src/screens/Basket";
+import AccountStacks from "./src/stacks/AccountArena.js";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = new createNativeStackNavigator();
-import Index from "./src/screens/index";
-import SignIn from "./src/screens/signin";
-import SignUp from "./src/screens/signup";
-import Checkout from "./src/screens/checkout.js";
-import Profile from "./src/screens/profile.js";
-import Detail from "./src/screens/detail";
+import Index from "./src/screens/Index";
+import SignIn from "./src/screens/Signin";
+import SignUp from "./src/screens/Signup";
+import Checkout from "./src/screens/Checkout.js";
+import Profile from "./src/screens/Profile.js";
+import Detail from "./src/screens/Detail";
 import { useNavigation } from "@react-navigation/native";
 
 const Tab = createBottomTabNavigator();

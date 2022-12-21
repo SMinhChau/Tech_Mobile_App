@@ -56,85 +56,106 @@ export default function SignIn({ navigation }) {
   };
 
   return (
-    <View
-      style={[s.fl1, s.alItsCnt, s.bgMain, { justifyContent: "space-between" }]}
-    >
-      <View style={[s.alItsCnt, s.toCenter, { height: "30%" }]}>
-        <Text style={[s.f65, s.b, { color: "white" }]}>SignIn</Text>
-      </View>
-      <View
-        style={[
-          {
-            padding: 30,
-            width: "100%",
-            height: "70%",
-            backgroundColor: "white",
-            borderTopLeftRadius: 40,
-            borderTopRightRadius: 40,
-          },
-        ]}
+    <View style={styles.viewContent}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? 0 : 0}
+        style={styles.container}
       >
-        <KeyboardAvoidingView behavior="position">
-          <Text style={[s.b, s.f22]}>Login</Text>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View
-            style={{
-              height: "40%",
-              justifyContent: "space-between",
-              marginTop: 40,
-            }}
+            style={[
+              s.alItsCnt,
+              s.toCenter,
+              { height: "30%" },
+              { width: "100%" },
+              { alignItems: "center" },
+            ]}
           >
-            <TextInput
-              variant="outlined"
-              label={email ? "" : "Email"}
-              value={email}
-              onChangeText={(text) => setEmail(text)}
-            />
-            <TextInput
-              Input
-              label={password ? "" : "password"}
-              variant="outlined"
-              value={password}
-              onChangeText={(text) => setpassword(text)}
-              trailing={(props) => (
-                <IconButton
-                  icon={(props) => <Icon name="eye" {...props} />}
-                  {...props}
-                />
-              )}
-            />
-            <TouchableOpacity>
-              <Text style={[s.b, s.f15, { color: "blue" }]}>
-                Forget password ?
-              </Text>
-            </TouchableOpacity>
+            <Text style={[s.f65, s.b, { color: "white" }]}>SignIn</Text>
           </View>
-          <View style={[s.toCenter, s.alItsCnt, { marginTop: 60 }]}>
-            <TouchableOpacity
-              onPress={hanldPressLogin}
-              style={[
-                s.bgMain,
-                s.toCenter,
-                s.alItsCnt,
-                { width: "100%", height: 60, borderRadius: 20 },
-              ]}
+        </TouchableWithoutFeedback>
+        <View
+          style={[
+            {
+              padding: 30,
+              width: "100%",
+              height: "70%",
+              backgroundColor: "white",
+              borderTopLeftRadius: 40,
+              borderTopRightRadius: 40,
+            },
+          ]}
+        >
+          <KeyboardAvoidingView behavior="position">
+            <Text style={[s.b, s.f22]}>Login</Text>
+            <View
+              style={{
+                height: "40%",
+                justifyContent: "space-between",
+                marginTop: 40,
+              }}
             >
-              <Text style={[s.b, s.f24, { color: "white" }]}>Login</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
-              <Text style={[s.b, s.f15, { color: "blue", marginTop: 10 }]}>
-                Create account
-              </Text>
-            </TouchableOpacity>
-          </View>
-        </KeyboardAvoidingView>
-      </View>
+              <TextInput
+                variant="outlined"
+                label={email ? "" : "Email"}
+                value={email}
+                onChangeText={(text) => setEmail(text)}
+              />
+              <TextInput
+                Input
+                label={password ? "" : "password"}
+                variant="outlined"
+                value={password}
+                onChangeText={(text) => setpassword(text)}
+                trailing={(props) => (
+                  <IconButton
+                    icon={(props) => <Icon name="eye" {...props} />}
+                    {...props}
+                  />
+                )}
+              />
+              <TouchableOpacity>
+                <Text style={[s.b, s.f15, { color: "blue" }]}>
+                  Forget password ?
+                </Text>
+              </TouchableOpacity>
+            </View>
+            <View style={[s.toCenter, s.alItsCnt, { marginTop: 60 }]}>
+              <TouchableOpacity
+                onPress={hanldPressLogin}
+                style={[
+                  s.bgMain,
+                  s.toCenter,
+                  s.alItsCnt,
+                  { width: "100%", height: 60, borderRadius: 20 },
+                ]}
+              >
+                <Text style={[s.b, s.f24, { color: "white" }]}>Login</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+                <Text style={[s.b, s.f15, { color: "blue", marginTop: 10 }]}>
+                  Create account
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </KeyboardAvoidingView>
+        </View>
+      </KeyboardAvoidingView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  viewContent: {
     flex: 1,
+    backgroundColor: "#5956E9",
+    alignItems: " center",
+    justifyContent: "center",
+  },
+  container: {
+    width: "100%",
+    alignItems: " center",
+    justifyContent: "center",
   },
   inner: {
     padding: 24,

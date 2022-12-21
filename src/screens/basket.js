@@ -11,7 +11,7 @@ import {
 } from "react-native";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
-import Header from "../components/header";
+import Header from "../components/Header";
 
 function Basket({ navigation, route }) {
   const [listBasket, setListBasket] = useState([]);
